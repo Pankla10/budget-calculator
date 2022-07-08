@@ -15,6 +15,7 @@ export class ItemListComponent implements OnInit {
   @Input() amount?: number = 0;
   budget: number = 0;
   dataArray2?: Array<budgetItem> = [];
+  temporaryBudget: number = 0;
 
   ngOnInit(): void {
     //console.log(this.dataArray);
@@ -39,10 +40,31 @@ export class ItemListComponent implements OnInit {
   }
   
   updateBudget(): void{
-    if(this.amount != undefined){
+    /*if(this.amount != undefined){
       this.budget += this.amount;
-    }
+    }*/
+    
+    this.dataArray2?.forEach(data => {
+      if(data.amount1 != undefined){
+        this.temporaryBudget += data.amount1;
+        
+      }
+      
+    })
+    this.budget = this.temporaryBudget;
+    this.temporaryBudget = 0;
     console.log(this.budget)
+  }
+
+  delete(event: Event): void{
+    if(event.target != undefined){
+      const id = (event.target as HTMLInputElement).id;
+      this.dataArray2?.splice(parseInt(id),1);
+      this.updateBudget();
+      //const id = event.target.value;
+      console.log(id);
+    }
+   
   }
 
 }

@@ -1,5 +1,6 @@
 <h1>Budget: {{budget}}</h1>
-<div *ngFor="let data of dataArray2">
+<div *ngFor="let data of dataArray2; let i = index">
     <p *ngIf="dataArray2 != undefined">{{data?.description1}}</p>
     <p *ngIf="dataArray2 != undefined">{{data?.amount1}}</p>
+    <button (click)="delete($event)" id={{i}}>Delete</button>
 </div>
