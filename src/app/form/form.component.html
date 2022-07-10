@@ -1,5 +1,6 @@
 <form #myForm="ngForm" (ngSubmit)="onSubmit()">
-    <input type="number" name="amount" [(ngModel)]="amount" placeholder="amount">
-    <input type="text" name="description" [(ngModel)]="description" placeholder="description">
-    <input type="submit" name="submit" value="Add">
+    <input type="number" name="amount" [(ngModel)]="amount" placeholder="amount" ngClass="input number">
+    <input type="text" name="description" [(ngModel)]="description" placeholder="description"
+        ngClass="input description">
+    <input type="submit" name="submit" value="Add" ngClass="submit">
 </form>

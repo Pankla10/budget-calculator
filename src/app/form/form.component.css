@@ -1,0 +1,35 @@
+form{
+    text-align: center;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    background-color: #2b0969;
+}
+.input{
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #dfd9d9;
+    margin-right: 5px;
+    border: none;
+}
+.input:focus{
+    outline: 4px solid blueviolet;
+}
+.description{
+    width:400px;
+}
+.number{
+    width: 100px;
+}
+.submit{
+    padding: 10px;
+    border-radius: 5px;
+    background-color: blueviolet;
+    color: white;
+    border: none;
+    width: 60px;
+    cursor: pointer;
+    transition: .2s;
+}
+.submit:hover{
+    color: black;
+}

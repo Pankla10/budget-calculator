@@ -35,7 +35,6 @@ export class ItemListComponent implements OnInit {
      // console.log(this?.description)
     console.log(this.dataArray2);
     
-    
     //console.log(this.dataArray?[0].description1);
   }
   

@@ -1,0 +1,39 @@
+.budget{
+    background-color: #2b0969;
+    text-align: center;
+    font-size: 43px;
+    color: #31d885;
+    height: 200px;
+    line-height: 125px;
+}
+.list{
+    margin: 10px auto;
+    text-align: center;
+}
+p{
+    display: inline-block;
+    padding: 10px;
+}
+.amountP{
+    font-size: 17px;
+    border-radius: 5px;
+}
+.deleteButton{
+    text-align: center;
+    margin-left: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: blueviolet;
+    color: white;
+    border: none;
+    width: 80px;
+    cursor: pointer;
+    transition: .2s;
+    font-size: 18px;
+}
+.green{
+    background-color: #31d885;
+}
+.red{
+    background-color: red;
+}
