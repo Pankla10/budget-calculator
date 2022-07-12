@@ -26,13 +26,18 @@ export class FormComponent implements OnInit {
   onSubmit(): void{
     //console.log(this.description);
     //console.log(this.amount);
-    this.dataArray?.push({
-      description1: this.description,
-      amount1: this.amount
-    })
+    if(this.description!.length <= 50 && this.amount!.toString().length <= 10){
+      //this.dataArray?.push({
+      //  description1: this.description,
+      //  amount1: this.amount
+      //})
+      console.log(this.amount!.toString().length)
+      this.newItemEvent.emit({description:this.description, amount:this.amount});
+    }
+    
     //console.log(this.dataArray);
     //this.newItemEvent.emit(this.description);
-    this.newItemEvent.emit({description:this.description, amount:this.amount});
+   
     //this.newItemEvent.emit(this.amount);
   }
 

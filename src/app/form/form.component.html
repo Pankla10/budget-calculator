@@ -1,6 +1,7 @@
 <form #myForm="ngForm" (ngSubmit)="onSubmit()">
-    <input type="number" name="amount" [(ngModel)]="amount" placeholder="amount" ngClass="input number">
-    <input type="text" name="description" [(ngModel)]="description" placeholder="description"
-        ngClass="input description">
+    <input type="text" oninput="numberOnly(this.id);" name="amount" required [(ngModel)]="amount" placeholder="amount"
+        ngClass="input number" maxlength="10">
+    <input type="text" name="description" required [(ngModel)]="description" placeholder="description"
+        ngClass="input description" maxlength="50">
     <input type="submit" name="submit" value="Add" ngClass="submit">
 </form>

@@ -35,6 +35,7 @@ export class ItemListComponent implements OnInit {
      // console.log(this?.description)
     console.log(this.dataArray2);
     
+    
     //console.log(this.dataArray?[0].description1);
   }
   
@@ -45,7 +46,7 @@ export class ItemListComponent implements OnInit {
     
     this.dataArray2?.forEach(data => {
       if(data.amount1 != undefined){
-        this.temporaryBudget += data.amount1;
+        this.temporaryBudget += Number(data.amount1);
         
       }
       
