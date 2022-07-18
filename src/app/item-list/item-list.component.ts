@@ -1,6 +1,8 @@
 import { Component, OnInit, Input, OnChanges } from '@angular/core';
 import { empty } from 'rxjs';
 import {budgetItem} from '../models/budget-item.model';
+import {MatDialog, MatDialogConfig} from "@angular/material/dialog";
+import { PopUpComponent } from '../pop-up/pop-up.component';
 
 @Component({
   selector: 'app-item-list',
@@ -9,7 +11,7 @@ import {budgetItem} from '../models/budget-item.model';
 })
 export class ItemListComponent implements OnInit {
 
-  constructor() { }
+  constructor(private dialog: MatDialog) { }
   //@Input() dataArray?: Array<budgetItem>;
   @Input() description?: string = 'dd';
   @Input() amount?: number = 0;
@@ -24,6 +26,14 @@ export class ItemListComponent implements OnInit {
   ngOnChanges(): void{
     //console.log("change")
     //console.log(this.dataArray == undefined);
+    this.updateArray();
+     // console.log(this?.description)
+    console.log(this.dataArray2);
+    
+    //console.log(this.dataArray?[0].description1);
+  }
+
+  updateArray(): void{
     if(this.description != undefined && this.amount != 0){
       this.dataArray2?.push({
         description1: this.description,
@@ -32,11 +42,6 @@ export class ItemListComponent implements OnInit {
       this.updateBudget();
       //console.log(this.dataArray2)
     }
-     // console.log(this?.description)
-    console.log(this.dataArray2);
-    
-    
-    //console.log(this.dataArray?[0].description1);
   }
   
   updateBudget(): void{
@@ -66,5 +71,23 @@ export class ItemListComponent implements OnInit {
     }
    
   }
+
+  openDialog(id: number): void{
+    const dialogConfig = new MatDialogConfig();
+
+    dialogConfig.disableClose = true;
+    dialogConfig.autoFocus = true;
+
+    const dialogRef = this.dialog.open(PopUpComponent, dialogConfig);
+    dialogRef.afterClosed().subscribe(form =>{
+      if(form != undefined){
+        this.dataArray2![id].description1 = form.get('description').value,
+        this.dataArray2![id].amount1 = form.get('amount').value
+        this.updateBudget();
+      }
+      }
+    )
+  }
+
 
 }

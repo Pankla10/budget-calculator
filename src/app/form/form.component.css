@@ -19,6 +19,7 @@ form{
 }
 .number{
     width: 100px;
+    height: 35px;
 }
 .submit{
     padding: 10px;
@@ -32,4 +33,9 @@ form{
 }
 .submit:hover{
     color: black;
+}
+.errorSpan{
+    text-align: center;
+    background-color: #2b0969;
+    color: rgb(219, 40, 40);
 }

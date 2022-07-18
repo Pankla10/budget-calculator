@@ -1,0 +1,20 @@
+<h2>Edit</h2>
+
+<mat-dialog-content [formGroup]="form">
+    <mat-form-field>
+        <input matInput type="text" formControlName="amount" placeholder="amount" />
+        <mat-error *ngIf="form.get('amount')?.hasError('required')">
+            Amount is required</mat-error>
+        <mat-error *ngIf="form.get('amount')?.hasError('maxlength') ">
+            Amount is too long</mat-error>
+        <mat-error *ngIf="form.get('amount')?.hasError('pattern')">Amount is not valid</mat-error>
+    </mat-form-field>
+    <mat-form-field>
+        <input matInput type="text" placeholder="description" formControlName="description" maxlength="40">
+        <mat-error *ngIf="form.get('description')?.hasError('required')">Description is required</mat-error>
+    </mat-form-field>
+</mat-dialog-content>
+<mat-dialog-actions>
+    <button type="submit" (click)="onSubmit()" ngClass="button" [disabled]="!form.valid">submit</button>
+    <button (click)="close()" ngClass="button margin">Close</button>
+</mat-dialog-actions>

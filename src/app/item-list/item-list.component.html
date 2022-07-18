@@ -10,6 +10,7 @@
                         [ngClass]="{'green': data.amount1 >= 0,'red': data.amount1 < 0, 'amountP': true}">
                         {{data?.amount1}}</p>
                     <button (click)="delete($event)" id={{i}} ngClass="deleteButton">Delete</button>
+                    <button (click)="openDialog(i)" ngClass="deleteButton">Edit</button>
                 </div>
             </ng-container>
         </ng-container>
@@ -24,6 +25,7 @@
                         [ngClass]="{'green': data.amount1 >= 0,'red': data.amount1 < 0, 'amountP': true}">
                         {{data?.amount1}}</p>
                     <button (click)="delete($event)" id={{i}} ngClass="deleteButton">Delete</button>
+                    <button (click)="openDialog(i)" ngClass="deleteButton">Edit</button>
                 </div>
             </ng-container>
         </ng-container>

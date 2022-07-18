@@ -1,7 +1,24 @@
-<form #myForm="ngForm" (ngSubmit)="onSubmit()">
-    <input type="text" oninput="numberOnly(this.id);" name="amount" required [(ngModel)]="amount" placeholder="amount"
-        ngClass="input number" maxlength="10">
+<!--<form #myForm="ngForm" (ngSubmit)="myForm.valid && onSubmit()">
+    <input type="text" name="amount" required [(ngModel)]="amount" placeholder="amount" ngClass="input number"
+        minlength="1" maxlength="10" #name="ngModel">
     <input type="text" name="description" required [(ngModel)]="description" placeholder="description"
-        ngClass="input description" maxlength="50">
+        ngClass="input description" maxlength="40" #name="ngModel" minlength="1">
+    <span *ngIf="description.errors?.minlength">Description is required</span>
     <input type="submit" name="submit" value="Add" ngClass="submit">
+</form>-->
+<form [formGroup]="addForm" (ngSubmit)="onSubmit()">
+    <input type="text" formControlName="amount" placeholder="amount" ngClass="input number" maxlength="10" />
+    <input type="text" formControlName="description" placeholder="description" ngClass="input description"
+        maxlength="41" />
+    <input type="submit" formControlName="submit" ngClass="submit" />
 </form>
+<div *ngIf="addForm.get('amount')?.hasError('required') && addForm.get('amount')?.touched && addForm.get('amount')?.dirty"
+    ngClass="errorSpan">Amount is required</div>
+<div *ngIf="addForm.get('amount')?.hasError('maxlength') && addForm.get('amount')?.touched && addForm.get('amount')?.dirty"
+    ngClass="errorSpan">Amount is too long</div>
+<div *ngIf="addForm.get('amount')?.hasError('pattern') && addForm.get('amount')?.touched && addForm.get('amount')?.dirty"
+    ngClass="errorSpan">Amount is not valid</div>
+<div *ngIf="addForm.get('description')?.hasError('required') && addForm.get('description')?.touched && addForm.get('description')?.dirty"
+    ngClass="errorSpan">Description is required</div>
+<div *ngIf="addForm.get('description')?.hasError('maxlength') && addForm.get('description')?.touched && addForm.get('description')?.dirty"
+    ngClass="errorSpan">Description is too long</div>
