@@ -23,10 +23,7 @@ export class FormComponent implements OnInit {
 
   description?: any = this.addForm;
   amount?: any;
-  //dataArray?: Array<budgetItem> = [{
-  //  description1:"dd",
-  //  amount1: 1
-  //}];
+
   dataArray?: Array<budgetItem> = [];
 
   ngOnInit(): void {
@@ -39,9 +36,7 @@ export class FormComponent implements OnInit {
       if(this.addForm.valid){
         this.newItemEvent.emit({description:this.addForm.value.description, amount:this.addForm.value.amount});
       }
-    //if(this.description!.length <= 40 && this.amount!.toString().length <= 10 && Number.isNaN(Number(this.amount)) == false){
-      
-    //}
+
   }
 
 

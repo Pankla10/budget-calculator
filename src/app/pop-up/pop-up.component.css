@@ -14,3 +14,28 @@
 .margin{
     margin-left: 10px;
 }
+@media (max-width: 1025px){
+    h2{
+        font-size: 30px;
+    }
+    .button{
+        font-size: 23px;
+        width: 100px;
+    }
+    mat-dialog-content{
+        font-size: 23px;
+    }
+}
+
+@media (max-width: 481px){
+    h2{
+        font-size: 25px;
+    }
+    .button{
+        font-size: 16px;
+        width: 80px;
+    }
+    mat-dialog-content{
+        font-size: 16px;
+    }
+}

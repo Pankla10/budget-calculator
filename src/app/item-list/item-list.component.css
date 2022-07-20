@@ -18,7 +18,7 @@
     align-items: center;
     margin-left: 300px;
 }
-.listAmount{
+.listExpenses{
     display: flex;
     width: 100%;
     margin: 20px auto;
@@ -35,7 +35,7 @@ p{
     font-size: 17px;
     border-radius: 5px;
 }
-.deleteButton{
+.actionButton{
     text-align: center;
     margin-left: 10px;
     padding: 10px;
@@ -63,7 +63,63 @@ p{
 .incomeH1{
     color: #31d885;
 }
-.amountH1{
+.expensesH1{
     color:red ;
+}
+@media (max-width: 1025px){
+    .listIncome{
+        margin-left: 10px;
+    }
+    .listExpenses{
+        margin-right: 10px;
+    }
+    .incomeH1,.expensesH1{
+        font-size: 2.5em;
+    }
+    .descriptionP{
+        word-break: break-all;
+        font-size: 24px;
+    }
+    .amountP{
+        font-size: 24px;
+        margin-bottom: 5px;
+    }
+    .actionButton{
+        font-size: 24px;
+        width: 100px;
+    }
+    .budget{
+        font-size: 50px;
+    }
+}
+
+@media (max-width: 481px){
+    .listIncome{
+        margin-left: 10px;
+    }
+    .listExpenses{
+        margin-right: 10px;
+    }
+    .incomeH1,.expensesH1{
+        font-size: 1.5em;
+    }
+    .descriptionP{
+        word-break: break-all;
+    }
+    .deleteButton{
+        margin-bottom: 5px;
+    }
+    .amountP{
+        font-size: 17px;
+        margin-bottom: 5px;
+    }
+    .budget{
+        font-size: 43px;
+    }
+    .actionButton{
+        font-size: 18px;
+        width: 80px;
+        margin-bottom: 5px;
+    }
 }
 

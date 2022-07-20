@@ -9,14 +9,14 @@
                     <p *ngIf="data.amount1 != undefined"
                         [ngClass]="{'green': data.amount1 >= 0,'red': data.amount1 < 0, 'amountP': true}">
                         {{data?.amount1}}</p>
-                    <button (click)="delete($event)" id={{i}} ngClass="deleteButton">Delete</button>
-                    <button (click)="openDialog(i)" ngClass="deleteButton">Edit</button>
+                    <button (click)="delete($event)" id={{i}} ngClass="actionButton">Delete</button>
+                    <button (click)="openDialog(i)" ngClass="actionButton">Edit</button>
                 </div>
             </ng-container>
         </ng-container>
     </div>
-    <div ngClass="listAmount">
-        <h1 ngClass="amountH1">EXPENSES</h1>
+    <div ngClass="listExpenses">
+        <h1 ngClass="expensesH1">EXPENSES</h1>
         <ng-container *ngFor="let data of dataArray2; let i = index">
             <ng-container *ngIf="data.amount1 != undefined" class="containerList">
                 <div *ngIf="data.amount1 < 0" ngClass="expenses">
@@ -24,8 +24,8 @@
                     <p *ngIf="data.amount1 != undefined"
                         [ngClass]="{'green': data.amount1 >= 0,'red': data.amount1 < 0, 'amountP': true}">
                         {{data?.amount1}}</p>
-                    <button (click)="delete($event)" id={{i}} ngClass="deleteButton">Delete</button>
-                    <button (click)="openDialog(i)" ngClass="deleteButton">Edit</button>
+                    <button (click)="delete($event)" id={{i}} ngClass="actionButton">Delete</button>
+                    <button (click)="openDialog(i)" ngClass="actionButton">Edit</button>
                 </div>
             </ng-container>
         </ng-container>

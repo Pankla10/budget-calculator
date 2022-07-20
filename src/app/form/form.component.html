@@ -1,11 +1,3 @@
-<!--<form #myForm="ngForm" (ngSubmit)="myForm.valid && onSubmit()">
-    <input type="text" name="amount" required [(ngModel)]="amount" placeholder="amount" ngClass="input number"
-        minlength="1" maxlength="10" #name="ngModel">
-    <input type="text" name="description" required [(ngModel)]="description" placeholder="description"
-        ngClass="input description" maxlength="40" #name="ngModel" minlength="1">
-    <span *ngIf="description.errors?.minlength">Description is required</span>
-    <input type="submit" name="submit" value="Add" ngClass="submit">
-</form>-->
 <form [formGroup]="addForm" (ngSubmit)="onSubmit()">
     <input type="text" formControlName="amount" placeholder="amount" ngClass="input number" maxlength="10" />
     <input type="text" formControlName="description" placeholder="description" ngClass="input description"

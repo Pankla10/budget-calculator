@@ -8,12 +8,10 @@ import {budgetItem} from './models/budget-item.model';
 })
 export class AppComponent {
   title = 'budget-calculator';
-  //dataArray?: Array<budgetItem>;
   description?: string;
   amount?: number;
 
   addItem(newItem: any){
-    //this.dataArray?.push(newItem);
     console.log(newItem);
     this.description = newItem.description;
     this.amount = newItem.amount;
