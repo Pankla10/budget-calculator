@@ -12,4 +12,4 @@ Simple application to managment home budget
 
 ## Demo
 
-Link: https://pankla10.github.io/budget-calculator/
+Link: https://dbfdvf.github.io/budget-calculator/
